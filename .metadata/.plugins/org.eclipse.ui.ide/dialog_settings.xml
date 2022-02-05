@@ -6,4 +6,7 @@
 			<item value="org.eclipse.jdt.ui.java"/>
 		</list>
 	</section>
+	<section name="org.eclipse.ui.internal.ide.dialogs.ProjectContentsLocationArea">
+		<item key="OUTSIDE_LOCATION" value="D:\Java_Training_Workspace\SeleniumConcept"/>
+	</section>
 </section>
