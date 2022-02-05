@@ -3,6 +3,7 @@ package com.ha.openemr;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,13 +34,30 @@ public class MessageTest {
 	s1.selectByVisibleText("English (Indian)");
 	
 	driver.findElement(By.xpath("//button[@type= 'submit']")).click();
-	String actualTitle=driver.getTitle();
-	System.out.println(actualTitle);
+//	String actualTitle=driver.getTitle();
+//	System.out.println(actualTitle);
+//	
+//	String url = driver.getCurrentUrl();
+//	System.out.println(url);
+	// this is java script --document.querySelector("li[data-bind='click: logout']");
+	driver.findElement(By.xpath("//div[text()= \"Patient/Client\"]")).click();
+	driver.findElement(By.xpath("//div[text()= \"Patients\"]")).click();
+	driver.switchTo().frame(driver.findElement(By.name("fin")));
+	driver.findElement(By.id("//button[@id= \"create_patient_btn1\"]")).click();
+	driver.switchTo().defaultContent();
+	driver.switchTo().frame(driver.findElement(By.name("pat")));
+	driver.findElement(By.id("form_fname")).sendKeys("Anitha");
+	driver.findElement(By.id("form_lname")).sendKeys("Anith");
 	
-	String url = driver.getCurrentUrl();
-	System.out.println(url);
-	 
-	 
+	
+			
+	
+	//JavascriptExecutor js=(JavascriptExecutor) driver;
+
+//	js.executeScript("document.querySelector(\"li[data-bind='click: logout']\").click();");
+//	driver.switchTo().frame(driver.findElement(By.id("logoutinnerframe")));
+//	driver.findElement(By.cssSelector("menuLabel dropdown-toggle oe-dropdown-toggle")).click();
+	
 	 
 	
 }
